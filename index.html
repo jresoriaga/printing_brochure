@@ -100,23 +100,8 @@
       pageCallback: theKingIsBlackPageCallback,
       pages: 40,
       propertiesCallback: function (props) {
-        props.cssLayersLoader = function (n, clb) {// n - page number
-          clb([{
-            css: '.hd {margin-top: 200px;background-color: red;}',
-            html: '<h1 class="hd">CSS3 Layer - Hello</h1>',
-            js: function (jContainer) {
-              console.log(jContainer);
-              return {
-                hide: function () { console.log('hide'); },
-                hidden: function () { console.log('hidden'); },
-                show: function () { console.log('show'); },
-                shown: function () { console.log('shown'); },
-                dispose: function () { console.log('dispose'); }
-              };
-            }
-          }]);
-        };
-        props.cover.color = 0x000000;
+        props.page.depth /= 2.5;
+        props.cover.padding = 0.002;
         return props;
       },
       template: {
